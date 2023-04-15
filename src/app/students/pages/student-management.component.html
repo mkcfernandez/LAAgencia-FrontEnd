@@ -1,0 +1,40 @@
+<div class="modal-header">
+    <h4 class="modal-title">Studen Record Management</h4>
+    <button type="button" class="btn-close" aria-label="Close" (click)="activeModal.dismiss('Cross click')"></button>
+</div>
+  
+    <form (ngSubmit)="saveStudent()" [formGroup]="formStudentManagement">
+      <div class="modal-body">
+      <div class="row">
+        <div class="col-md-12">
+          <div class="form-group">
+            <label for="name">Name</label>
+            <input type="text" class="form-control" [ngModel]="student_name" id="name" aria-describedby="name" required formControlName="name">
+          </div>
+        </div>
+        <div class="col-md-12">
+            <div class="form-group">
+              <label for="lastName">Last Name</label>
+              <input type="text" class="form-control" [ngModel]="student_lastName" id="lastName" aria-describedby="lastName" required formControlName="lastName">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="motherLastName">Mother's Last Name</label>
+              <input type="text" class="form-control" [ngModel]="student_motherLastName" id="motherLastName" aria-describedby="motherLastName" required formControlName="motherLastName">
+            </div>
+          </div>
+          <div class="col-md-12">
+            <div class="form-group">
+              <label for="age">Age</label>
+              <input type="text" class="form-control" [ngModel]="student_age" id="age" aria-describedby="age" required formControlName="age">
+            </div>
+          </div>
+      </div>
+    </div>
+
+    <div class="modal-footer">
+      <button type="button" class="btn btn-outline-success" *ngIf="formStudentManagement.valid" (click)="saveStudent()">SAVE</button>
+      <button type="button" class="btn btn-outline-dark" (click)="activeModal.close('Close click')">Cerrar</button>
+    </div>
+    </form>
